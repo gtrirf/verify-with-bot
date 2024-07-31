@@ -1,0 +1,21 @@
+<!-- templates/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <p>Tastiqlash kodini olish uchun <b><a href='https://t.me/akm_urgutbot'>@akm_urgutbot</a></b>ga kiring</p>
+    <form method="post">
+        {% csrf_token %}
+        <label for="verification_code">Enter Verification Code:</label>
+        <input type="text" id="verification_code" name="verification_code" required>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
